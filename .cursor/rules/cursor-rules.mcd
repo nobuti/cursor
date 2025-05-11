@@ -30,14 +30,22 @@ How to add new cursor rules to the project
     └── ...
     ```
 
-4. Never place rule files:
+4. Update the Rule Index
+
+Whenever you add a new rule, also update `.cursor/rules/index.mcd` to include your rule in the master index table. This keeps the documentation discoverable and up to date.
+
+1. Open `.cursor/rules/index.mcd`
+2. Add a new row to the table for your rule, following the format:
+   | @your-rule-name.mdc | Short description of your rule |
+
+5. Never place rule files:
     - In the project root
     - In subdirectories outside .cursor/rules
     - In any other location
 
 5. Cursor rules have the following structure:
 
-````
+<cursor-rule>
 ---
 description: Short description of the rule's purpose
 globs: optional/path/pattern/**/* 
@@ -62,4 +70,5 @@ function goodExample() {
 function badExample() {
   // Implementation not following guidelines
 }
-```````
+```
+</cursor-rule>
