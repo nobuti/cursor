@@ -1,0 +1,49 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Installing New npm Packages
+
+Follow these steps **every time** you need to add a new npm package:
+
+1. **Always use `npm` to install packages.**
+   - Do **not** use `yarn`, `pnpm`, or other package managers.
+
+2. **Check if the package is already installed:**
+   - Open `package.json` and search for the package name in `dependencies` or `devDependencies`.
+   - If it exists, do **not** install it again.
+
+3. **Check for `.nvmrc` and use the correct Node version:**
+   - If `.nvmrc` exists in the project root, run:
+     ```sh
+     nvm use
+     ```
+   - If you don't have `nvm` installed, install it first: https://github.com/nvm-sh/nvm
+
+4. **Install the package:**
+   - Run:
+     ```sh
+     npm install <package-name>
+     ```
+   - For dev dependencies, use:
+     ```sh
+     npm install --save-dev <package-name>
+     ```
+
+5. **Commit changes to `package.json` and `package-lock.json`.**
+
+---
+
+## Example
+
+```sh
+# Check if lodash is already installed
+grep 'lodash' package.json
+
+# Use correct Node version if .nvmrc exists
+[ -f .nvmrc ] && nvm use
+
+# Install lodash
+npm install lodash
+```

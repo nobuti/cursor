@@ -16,4 +16,5 @@ Fundamental project structure, setup, and general development guidelines.
 | @cursor-rules.mdc                  | How to add or edit Cursor rules in our project              |
 | @installing-packages.mdc           | How to install packages                                     |
 | @task-list.mdc                     | Guidelines for creating and managing task lists             |
+| @install-npm-package.mdc           | How to properly install new npm packages (npm only, .nvmrc, package.json check) |
 
